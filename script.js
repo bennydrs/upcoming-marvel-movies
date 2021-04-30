@@ -14,7 +14,7 @@ moviesSort.forEach(movie => {
 
   const rowContents = `
     <div class="card" data-date="${realeaseDate}">
-      <img src=${image} alt="" />
+      <img src="./${image}" alt="" />
       <div class="card-content">
         <h2 class="card-title">${title}</h2>
         <p class="card-text">${realeaseDate ? realeaseDate : year}</p>
