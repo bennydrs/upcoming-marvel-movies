@@ -10,33 +10,41 @@ const moviesSort = sortData(movies)
 
 // looping movieSort and send to dom
 moviesSort.forEach(movie => {
-  const { title, image, realeaseDate, year } = movie
+  const { title, type, image, realeaseDate, year, details } = movie
 
   const rowContents = `
     <div class="card" data-date="${realeaseDate}">
       <img src="./${image}" alt="" />
-      <div class="card-content">
-        <h2 class="card-title">${title}</h2>
-        <p class="card-text">${realeaseDate ? realeaseDate : year}</p>
-        <div class="countdown">
-          ${realeaseDate ? `
-            <div class="c-element">
-              <p class="big-text days" id="days">0</p>
-              <span>days</span>
-            </div>
-            <div class="c-element">
-              <p class="big-text hours" id="hours">0</p>
-              <span>hours</span>
-            </div>
-            <div class="c-element mins">
-              <p class="big-text minutes" id="mins">0</p>
-              <span>mins</span>
-            </div>
-            <div class="c-element">
-              <p class="big-text seconds" id="seconds">0</p>
-              <span>seconds</span>
-            </div>`
+      <div class="card-body">
+        <div class="card-content">
+          <h2 class="card-title">${title}</h2>
+          <div class="card-texts">
+            <p class="card-text">${realeaseDate ? realeaseDate : year}</p>
+            <p class="card-text type ${type === 'Series' ? 'series' : 'movie'}">${type}</p>
+          </div>
+          <div class="countdown">
+            ${realeaseDate ? `
+              <div class="c-element">
+                <p class="big-text days" id="days">0</p>
+                <span>days</span>
+              </div>
+              <div class="c-element">
+                <p class="big-text hours" id="hours">0</p>
+                <span>hours</span>
+              </div>
+              <div class="c-element mins">
+                <p class="big-text minutes" id="mins">0</p>
+                <span>mins</span>
+              </div>
+              <div class="c-element">
+                <p class="big-text seconds" id="seconds">0</p>
+                <span>seconds</span>
+              </div>`
       : `<p class="big-text hours">TBA ${year}</p>`}
+        </div>
+      </div>
+      <div class="card-actions">
+        <a href="${details}" class="card-btn" target="_blank">Details</a>
       </div>
     </div>
   `
