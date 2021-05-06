@@ -3,9 +3,9 @@ const movies = [
     title: "Loki",
     type: "Series",
     image: "img/loki.jpg",
-    realeaseDate: '11 Jun 2021',
+    realeaseDate: '9 Jun 2021',
     year: 2021,
-    details: "https://www.imdb.com/title/tt9140554/"
+    details: "https://filmbenia.vercel.app/tv/84958"
   },
   {
     title: "Black Widow",
@@ -69,7 +69,7 @@ const movies = [
     image: "img/whatif.jpg",
     realeaseDate: '',
     year: 2021,
-    details: "https://www.imdb.com/title/tt10168312/"
+    details: "https://filmbenia.vercel.app/tv/91363"
   },
   {
     title: "Hawkeye",
