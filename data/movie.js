@@ -64,7 +64,7 @@ const movies = [
     details: "https://filmbenia.vercel.app/movie/505642"
   },
   {
-    title: "What If",
+    title: "What If...?",
     type: "Series",
     image: "img/whatif.jpg",
     realeaseDate: '',
@@ -77,7 +77,7 @@ const movies = [
     image: "img/hawkeye.jpg",
     realeaseDate: '',
     year: 2021,
-    details: "https://www.imdb.com/title/tt10160804"
+    details: "https://filmbenia.vercel.app/tv/88329"
   },
   {
     title: "Ms. Marvel",
@@ -85,7 +85,7 @@ const movies = [
     image: "img/msmarvel.jpg",
     realeaseDate: '',
     year: 2021,
-    details: "https://www.imdb.com/title/tt10857164"
+    details: "https://filmbenia.vercel.app/tv/92782"
   },
   {
     title: "She Hulk",
@@ -93,7 +93,7 @@ const movies = [
     image: "img/shehulk.jpg",
     realeaseDate: '',
     year: 2022,
-    details: "https://www.imdb.com/title/tt10857160/"
+    details: "https://filmbenia.vercel.app/tv/92783"
   },
   {
     title: "The Marvels",
@@ -133,7 +133,7 @@ const movies = [
     image: "img/moon-knight.jpg",
     realeaseDate: '',
     year: 2022,
-    details: "https://www.imdb.com/title/tt10234724"
+    details: "https://filmbenia.vercel.app/tv/92749"
   },
   {
     title: "The Guardians of the Galaxy Holiday Special",
@@ -149,7 +149,7 @@ const movies = [
     image: "img/armor-wars.jpg",
     realeaseDate: '',
     year: '',
-    details: "https://www.imdb.com/title/tt13623128"
+    details: "https://filmbenia.vercel.app/tv/114470"
   },
   {
     title: "Secret Invasion",
@@ -157,7 +157,7 @@ const movies = [
     image: "img/secret-invasion.jpg",
     realeaseDate: '',
     year: '',
-    details: "https://www.imdb.com/title/tt13157618"
+    details: "https://filmbenia.vercel.app/tv/114472"
   },
   {
     title: "Iron Heart",
@@ -166,6 +166,22 @@ const movies = [
     realeaseDate: '',
     year: '',
     details: "https://www.imdb.com/title/tt13623126"
+  },
+  {
+    title: "Blade",
+    type: "Movie",
+    image: "img/blade.jpg",
+    realeaseDate: '',
+    year: '',
+    details: "https://filmbenia.vercel.app/movie/617127"
+  },
+  {
+    title: "I am Groot",
+    type: "Series",
+    image: "img/groot.jpg",
+    realeaseDate: '',
+    year: '',
+    details: "https://filmbenia.vercel.app/tv/114469"
   },
 ]
 
