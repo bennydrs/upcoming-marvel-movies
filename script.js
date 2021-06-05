@@ -1,5 +1,5 @@
 import movies from './data/movie.js'
-import { formatTime, join, toTimestamp, sortData } from './utis.js'
+import { formatTime, join, toTimestamp, sortData } from './utils.js'
 
 const row = document.querySelector('.row')
 
@@ -14,7 +14,9 @@ moviesSort.forEach(movie => {
 
   const rowContents = `
     <div class="card" data-date="${realeaseDate}">
-      <img src="./${image}" alt="${title}" />
+      <div class="card-image">
+        <img src="./${image}" alt="${title}" />
+      </div>
       <div class="card-body">
         <div class="card-content">
           <h2 class="card-title">${title}</h2>

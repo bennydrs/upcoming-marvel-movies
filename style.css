@@ -68,11 +68,20 @@ header .logo {
   justify-content: space-between;
 }
 
-.card img {
-  width: 100%;
-  min-height: 548px;
-  height: auto;
+.card-image {
   background-color: #ddd;
+  display: inline-block;
+  height: 100%;
+  max-width: 100%;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 548px;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .card-title {
@@ -159,6 +168,10 @@ footer {
   header .logo {
     width: auto;
     height: 60px;
+  }
+
+  .card img {
+    min-height: 500px;
   }
 }
 
