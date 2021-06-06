@@ -149,6 +149,12 @@ header .logo {
   margin: 0 1rem;
 }
 
+.md-text {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 1rem 0;
+}
+
 .c-element {
   text-align: center;
 }
