@@ -19,7 +19,7 @@ moviesSort.forEach((movie) => {
   const rowContents = `
     <div class="card" data-date="${realeaseDate}">
       <div class="card-image">
-        <img src="./${image}" alt="${title}" />
+        <img src="./${image}" alt="${title}" loading="lazy" />
       </div>
       <div class="card-body">
         <div class="card-content">
@@ -57,7 +57,7 @@ moviesSort.forEach((movie) => {
         </div>
       </div>
       <div class="card-actions">
-        <a href="${details}" class="card-btn" target="_blank">Details</a>
+        <a href="${details}" class="card-btn" target="_blank" rel="noopener">Details</a>
       </div>
     </div>
   `
