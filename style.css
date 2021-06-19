@@ -19,6 +19,7 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 90px - 57px - 12px);
 }
 
 header {
@@ -27,7 +28,7 @@ header {
   justify-content: center;
   background-color: #202020;
   width: 100%;
-  padding: 4px;
+  height: 90px;
   box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2);
   margin-bottom: 12px;
 }
@@ -175,13 +176,26 @@ footer a:hover {
 }
 
 @media (max-width: 576px) {
-  header .logo {
-    width: auto;
-    height: 60px;
+  header {
+    height: 70px;
   }
 
   .card img {
     min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+  }
+  header .logo {
+    width: auto;
+    height: 60px;
+  }
+  .container {
+    max-width: 720px;
+    min-height: calc(100vh - 70px - 57px - 12px);
   }
 }
 
