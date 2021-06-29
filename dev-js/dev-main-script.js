@@ -1,5 +1,5 @@
-import movies from "./data/movie.js"
-import { formatTime, join, toTimestamp, sortData } from "./utils.js"
+import movies from "../data/movie.js"
+import { formatTime, join, sortData, toTimestamp } from "../js/utils.js"
 
 const row = document.querySelector(".row")
 
@@ -108,3 +108,8 @@ setInterval(() => {
     }
   }
 }, 1000)
+
+const updateVisitCount = () => {
+  fetch("https://api.countapi.xyz/update/upcomming-marvel-movies/movies/?amount=1")
+}
+updateVisitCount()
