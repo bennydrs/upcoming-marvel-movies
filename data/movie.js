@@ -67,7 +67,7 @@ const movies = [
     title: "What If...?",
     type: "Series",
     image: "img/whatif.jpg",
-    realeaseDate: "",
+    realeaseDate: "11 Aug 2021",
     year: 2021,
     details: "https://filmbenia.vercel.app/tv/91363",
   },
