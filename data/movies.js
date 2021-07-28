@@ -184,5 +184,3 @@ const movies = [
     details: "https://filmbenia.vercel.app/tv/114469",
   },
 ]
-
-export default movies

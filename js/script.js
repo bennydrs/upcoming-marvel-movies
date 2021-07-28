@@ -1,6 +1,3 @@
-import movies from "../data/movie.js"
-import { formatTime, join, sortData, toTimestamp } from "../js/utils.js"
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -14,7 +11,7 @@ const row = document.querySelector(".row")
 
 // format UNIX epoch of current date to dd/MMM/yyyy
 let optionDate = [{ day: "numeric" }, { month: "short" }, { year: "numeric" }]
-const currDate = join(new Date(), optionDate, " ")
+const currDate = formatDate(new Date(), optionDate, " ")
 
 // sort and filter movies
 const moviesSort = sortData(movies).filter(
