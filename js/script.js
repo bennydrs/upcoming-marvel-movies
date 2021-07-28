@@ -1,6 +1,15 @@
 import movies from "../data/movie.js"
 import { formatTime, join, sortData, toTimestamp } from "../js/utils.js"
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then((reg) => console.log("Success: ", reg.scope))
+      .catch((err) => console.log("Failure: ", err))
+  })
+}
+
 const row = document.querySelector(".row")
 
 // format UNIX epoch of current date to dd/MMM/yyyy
