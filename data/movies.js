@@ -75,7 +75,7 @@ const movies = [
     title: "Hawkeye",
     type: "Series",
     image: "img/hawkeye.jpg",
-    realeaseDate: "",
+    realeaseDate: "24 Nov 2021",
     year: 2021,
     details: "https://filmbenia.vercel.app/tv/88329",
   },
