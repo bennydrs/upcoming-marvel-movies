@@ -28,14 +28,14 @@ header {
   justify-content: center;
   background-color: #202020;
   width: 100%;
-  height: 90px;
+  height: 80px;
   box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2);
   /* margin-bottom: 10px; */
 }
 
 header .logo {
   width: auto;
-  height: 80px;
+  height: 70px;
 }
 
 .row {
@@ -97,14 +97,13 @@ header .logo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-bottom: 1rem;
 }
 
 .card-text {
   color: #333333;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;
   font-weight: 400;
 }
 
@@ -121,7 +120,7 @@ header .logo {
 }
 
 .card-actions {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 .card-btn {
   color: #1976d2;
@@ -153,11 +152,12 @@ header .logo {
 .md-text {
   font-size: 1.2rem;
   line-height: 1;
-  margin: 1rem 0;
 }
 
 .c-element {
   text-align: center;
+  min-width: 70px;
+  max-width: 80px;
 }
 
 .c-element span {
@@ -175,16 +175,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 576px) {
-  header {
-    height: 70px;
-  }
-
-  .card img {
-    min-height: 500px;
-  }
-}
-
 @media (max-width: 768px) {
   header {
     height: 70px;
@@ -194,8 +184,32 @@ footer a:hover {
     height: 55px;
   }
   .container {
-    max-width: 720px;
+    /* max-width: 720px; */
     min-height: calc(100vh - 70px - 57px - 12px);
+  }
+
+  .card {
+    margin: 0.8rem;
+    width: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    height: 60px;
+  }
+
+  header .logo {
+    height: 50px;
+  }
+
+  .card {
+    margin: 0.8rem;
+    width: 360px;
+  }
+
+  .card img {
+    min-height: 500px;
   }
 }
 
