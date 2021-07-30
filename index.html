@@ -46,6 +46,13 @@
   <script src="js/utils.js"></script>
   <script src="data/movies.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    // Listen to changes in the network state, reload when online.
+    // This handles the case when the device is completely offline.
+    window.addEventListener('online', () => {
+      window.location.reload()
+    })
+  </script>
 </body>
 
 </html>

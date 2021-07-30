@@ -1,4 +1,5 @@
-const CACHE_NAME = "site-static-v1"
+const CACHE_VERSION = 10
+const CURRENT_CACHE = `main-${CACHE_VERSION}`
 
 const assets = [
   "/",
@@ -41,7 +42,7 @@ const assets = [
 self.addEventListener("install", (event) => {
   // @ts-ignore
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(CURRENT_CACHE).then((cache) => {
       console.log("Opened cache")
 
       return cache.addAll(assets)
@@ -50,21 +51,21 @@ self.addEventListener("install", (event) => {
 })
 
 // Listen for requests
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches
-      .match(event.request)
-      .then((cacheRes) => {
-        return cacheRes || fetch(event.request)
-      })
-      .catch(() => caches.match("/offline.html"))
-  )
-})
+// self.addEventListener("fetch", (event) => {
+//   event.respondWith(
+//     caches
+//       .match(event.request)
+//       .then((cacheRes) => {
+//         return cacheRes || fetch(event.request)
+//       })
+//       .catch(() => caches.match("/offline.html"))
+//   )
+// })
 
 // Activate the SW
 self.addEventListener("activate", (event) => {
   const cacheWhitelist = []
-  cacheWhitelist.push(CACHE_NAME)
+  cacheWhitelist.push(CURRENT_CACHE)
 
   event.waitUntil(
     caches.keys().then((cacheNames) =>
@@ -77,4 +78,36 @@ self.addEventListener("activate", (event) => {
       )
     )
   )
+})
+
+// fetch the resource from the network
+const fromNetwork = (request, timeout) =>
+  new Promise((fulfill, reject) => {
+    const timeoutId = setTimeout(reject, timeout)
+    fetch(request).then((response) => {
+      clearTimeout(timeoutId)
+      fulfill(response)
+      update(request)
+    }, reject)
+  })
+
+// fetch the resource from the browser cache
+const fromCache = (request) =>
+  caches
+    .open(CURRENT_CACHE)
+    .then((cache) =>
+      cache.match(request).then((matching) => matching || cache.match("offline.html"))
+    )
+
+// cache the current page to make it available for offline
+const update = (request) =>
+  caches
+    .open(CURRENT_CACHE)
+    .then((cache) => fetch(request).then((response) => cache.put(request, response)))
+
+// general strategy when making a request (eg if online try to fetch it
+// from the network with a timeout, if something fails serve from cache)
+self.addEventListener("fetch", (evt) => {
+  evt.respondWith(fromNetwork(evt.request, 10000).catch(() => fromCache(evt.request)))
+  evt.waitUntil(update(evt.request))
 })
