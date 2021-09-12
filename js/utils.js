@@ -22,6 +22,10 @@ const toTimestamp = (strDate) => {
 const sortData = (data) => {
   const sortedData = [...data]
   return sortedData.sort((a, b) =>
-    a.realeaseDate ? (new Date(a.realeaseDate) > new Date(b.realeaseDate) ? 1 : -1) : ""
+    a.realeaseDate
+      ? new Date(a.realeaseDate) && a.title !== "Untitled Movies" > new Date(b.realeaseDate)
+        ? 1
+        : -1
+      : ""
   )
 }

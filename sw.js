@@ -35,12 +35,11 @@ const assets = [
   "img/spiderman-no-way-home.jpg",
   "img/thor-love-and-thunder.jpg",
   "img/whatif.jpg",
-  "/offline.html",
+  "img/untitled.jpg",
 ]
 
 // Install SW
 self.addEventListener("install", (event) => {
-  // @ts-ignore
   event.waitUntil(
     caches.open(CURRENT_CACHE).then((cache) => {
       console.log("Opened cache")
@@ -49,18 +48,6 @@ self.addEventListener("install", (event) => {
     })
   )
 })
-
-// Listen for requests
-// self.addEventListener("fetch", (event) => {
-//   event.respondWith(
-//     caches
-//       .match(event.request)
-//       .then((cacheRes) => {
-//         return cacheRes || fetch(event.request)
-//       })
-//       .catch(() => caches.match("/offline.html"))
-//   )
-// })
 
 // Activate the SW
 self.addEventListener("activate", (event) => {
