@@ -20,12 +20,9 @@ const toTimestamp = (strDate) => {
 
 // sort array
 const sortData = (data) => {
-  const sortedData = [...data]
-  return sortedData.sort((a, b) =>
-    a.realeaseDate
-      ? new Date(a.realeaseDate) && a.title !== "Untitled Movies" > new Date(b.realeaseDate)
-        ? 1
-        : -1
-      : ""
-  )
+  return data
+    .sort((a, b) => {
+      return new Date(a.releaseDate) - new Date(b.releaseDate)
+    })
+    .filter((m) => toTimestamp(m.releaseDate) >= toTimestamp(currDate) || m.releaseDate === "")
 }

@@ -191,7 +191,6 @@ footer a:hover {
   }
 
   .card {
-    margin: 0.8rem;
     width: 350px;
   }
 }
@@ -199,6 +198,7 @@ footer a:hover {
 @media (max-width: 576px) {
   header {
     height: 50px;
+    margin-bottom: 0.6rem;
   }
 
   header .logo {
@@ -206,7 +206,7 @@ footer a:hover {
   }
 
   .card {
-    margin: 0.8rem;
+    margin: 0.6rem 0.8rem;
     width: 360px;
     display: flex;
     flex-direction: row;
@@ -233,6 +233,7 @@ footer a:hover {
 
   .big-text {
     font-size: 0.85rem;
+    font-weight: 500;
     margin: 0;
   }
 

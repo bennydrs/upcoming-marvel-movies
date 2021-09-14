@@ -15,16 +15,14 @@ let optionDate = [{ day: "numeric" }, { month: "short" }, { year: "numeric" }]
 const currDate = formatDate(new Date(), optionDate, " ")
 
 // sort and filter movies
-const moviesSort = sortData(movies).filter(
-  (m) => toTimestamp(m.realeaseDate) >= toTimestamp(currDate) || m.realeaseDate === ""
-)
+const moviesSort = sortData(movies)
 
 // looping movieSort and send to dom
 moviesSort.forEach((movie) => {
-  const { title, type, image, realeaseDate, year, details } = movie
+  const { title, type, image, releaseDate, year, details } = movie
 
   const rowContents = `
-    <div class="card" data-date="${realeaseDate}">
+    <div class="card" data-date="${releaseDate}">
       <div class="card-image">
         <img src="./${image}" alt="${title}" loading="lazy" />
       </div>
@@ -32,16 +30,16 @@ moviesSort.forEach((movie) => {
         <div class="card-content">
           <h2 class="card-title">${title}</h2>
           <div class="card-texts">
-            <p class="card-text">${realeaseDate ? realeaseDate : year}</p>
+            <p class="card-text">${releaseDate ? releaseDate : year}</p>
             <p class="card-text type ${type === "Series" ? "series" : "movie"}">${type}</p>
           </div>
           <div class="countdown">
             ${
-              toTimestamp(realeaseDate) === toTimestamp(currDate)
+              toTimestamp(releaseDate) === toTimestamp(currDate)
                 ? `<p class="md-text">Showing today ${
                     type === "Series" ? "on Disney+" : "in Cinemas"
                   }</p>`
-                : realeaseDate
+                : releaseDate
                 ? `
                 <div class="c-element">
                   <p class="big-text days" id="days">0</p>
